@@ -9,7 +9,7 @@ class CartItemInlineAdmin(admin.TabularInline):
 
 
 @admin.register(Cart)
-class SuperheroSerializerAdmin(admin.ModelAdmin):
+class CartAdmin(admin.ModelAdmin):
     fields = ("user", )
     search_fields = ("user.username", "user.email")
     inlines = (CartItemInlineAdmin, )

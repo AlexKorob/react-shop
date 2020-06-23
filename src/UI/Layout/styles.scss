@@ -1,0 +1,19 @@
+.ant-layout-sider-trigger {
+  position: initial;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &>a {
+    height: 25px;
+    &>.anticon {
+      display: block;
+      &>svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}

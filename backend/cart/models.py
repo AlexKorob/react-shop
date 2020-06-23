@@ -29,9 +29,3 @@ class CartItem(models.Model):
 def create_cart(sender, instance=None, created=False, **kwargs):
     if instance and created:
         Cart.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def create_auth_token(sender, instance=None, created=False, **kwargs):
-    if created:
-        Token.objects.create(user=instance)

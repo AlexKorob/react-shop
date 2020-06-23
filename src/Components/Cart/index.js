@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state) => ({
   cart: state.cart,
-})
+});
 
 const WrappedCartComponent = withRouter(props => <CartComponent {...props}/>);
 

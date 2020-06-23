@@ -1,17 +1,22 @@
-import './styles.css';
+import './styles.scss';
 import React from 'react';
 import { Layout as AntLayout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { HomeOutlined,
          BuildOutlined,
-         ShoppingCartOutlined, } from '@ant-design/icons';
+         ShoppingCartOutlined,
+         LoginOutlined,
+         LogoutOutlined, } from '@ant-design/icons';
+import { connect } from 'react-redux';
 
 import { BackgroundDiv, LayoutWrapper } from './styles';
 
 const { Header, Footer, Sider, Content } = AntLayout;
 
-export const Layout = ({ defaultKey, header, slider, content, footer }) => {
+export const LayoutComponent = ({
+  defaultKey, header, slider, content, footer, user
+}) => {
   const [collapsed, setCollapse] = useState(true);
   const onCollapse = () => {
     setCollapse(!collapsed);
@@ -19,7 +24,14 @@ export const Layout = ({ defaultKey, header, slider, content, footer }) => {
 
   return (
     <LayoutWrapper>
-      <Header style={{color: 'white'}}>{header || 'Header'}</Header>
+      <Header style={{color: 'white'}}>
+        {header || 'Header'}
+        <Link to='/login'>
+          {!user.isAuth && <LoginOutlined />}
+          {user.isAuth && <LogoutOutlined />}
+        </Link>
+      </Header>
+
       <AntLayout>
         <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
           <Menu theme="dark" defaultSelectedKeys={[defaultKey || 'Home']} mode="inline">
@@ -44,3 +56,9 @@ export const Layout = ({ defaultKey, header, slider, content, footer }) => {
     </LayoutWrapper>
   );
 };
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+export const Layout = connect(mapStateToProps)(LayoutComponent);

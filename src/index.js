@@ -5,11 +5,16 @@ import './index.css';
 import App from './App';
 import { storeCreator } from 'Redux/index';
 import * as serviceWorker from './serviceWorker';
+import { PersistGate } from 'redux-persist/integration/react';
+
+const [store, persistor] = storeCreator()
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={storeCreator()}>
-      <App />
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

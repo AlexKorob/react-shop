@@ -2,8 +2,9 @@ export const reducerWrapper = (obj, initialState) => (state, action) => {
   if (!state) {
     return initialState;
   }
-  if (action.type in obj) {
-    return obj[action.type](state, action)
+  const type = action.type || action.types;
+  if (type in obj) {
+    return obj[type](state, action);
   }
   return state;
 }

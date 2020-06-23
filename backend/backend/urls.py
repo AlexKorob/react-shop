@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from rest_framework.authtoken.views import obtain_auth_token
+from users.views import AuthToken, RefreshAuthToken
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -31,7 +31,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-token-auth/', obtain_auth_token),
+    path('api-auth-token/', AuthToken.as_view()),
+    path('api-refresh-auth-token', RefreshAuthToken.as_view()),
 
     path('cart/', include("cart.urls")),
     path('shipping/', include("shipping.urls")),

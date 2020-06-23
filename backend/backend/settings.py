@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
 
+    'users',
     'cart',
     'shipping',
     'products',
@@ -91,7 +92,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': env('DATABASE_NAME'),
+        'NAME': f"{env('DATABASE_NAME')}.sqlite3",
         'USER': env('DATABASE_USER'),
         'PASSWORD': env('DATABASE_USER_PASSWORD'),
         'HOST': env('DATABASE_HOST'),
@@ -118,6 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

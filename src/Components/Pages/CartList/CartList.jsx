@@ -7,7 +7,7 @@ import noImageUrl from 'assets/images/no-image.jpg';
 export const CartList = ({ deleteProductFromCart,
                            setCountForProductInCart,
                            cart}) => {
-  
+
   let content;
   if (cart.length === 0) {
     content = <div>Your Cart is Empty</div>;

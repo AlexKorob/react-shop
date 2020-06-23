@@ -20,7 +20,7 @@ const apiCall = ({
   return new Promise((resolve, reject) => {
     api({method, url, data})
     .then(response => resolve(response))
-    .then(errors => reject(errors))
+    .catch(error => reject(error))
   });
 }
 

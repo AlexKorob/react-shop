@@ -1,0 +1,14 @@
+
+.swiper-container {
+  width: 200px;
+}
+
+.swiper-wrapper img {
+  height: 200px;
+}
+
+.swiper-slide {
+  width: 200px;
+  text-align: center;
+}
+

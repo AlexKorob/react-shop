@@ -1,0 +1,53 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Apple",
+        "description": "Delicious apple",
+        "price": "4.00"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Banana",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "price": "5.00"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "Orange",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "price": "3.00"
+    }
+},
+{
+    "model": "products.image",
+    "pk": 1,
+    "fields": {
+        "image": "product_images/apple.jpg",
+        "product": 1
+    }
+},
+{
+    "model": "products.image",
+    "pk": 2,
+    "fields": {
+        "image": "product_images/banana.jpg",
+        "product": 2
+    }
+},
+{
+    "model": "products.image",
+    "pk": 3,
+    "fields": {
+        "image": "product_images/orange.jpg",
+        "product": 3
+    }
+}
+]
